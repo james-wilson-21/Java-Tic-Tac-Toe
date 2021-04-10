@@ -147,6 +147,7 @@ public class GameMain extends JPanel implements MouseListener{
 				if (board.isDraw ()) {
 					
 				// TODO: set the currentstate to the draw gamestate
+					currentState = GameState.Draw;
 
 			}
 			//otherwise no change to current state of playing
