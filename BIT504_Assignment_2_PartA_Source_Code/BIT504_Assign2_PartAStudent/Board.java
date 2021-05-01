@@ -27,13 +27,13 @@ public class Board {
 	 /** Return true if it is a draw (i.e., no more EMPTY cells) */ 
 	public boolean isDraw() {
 		 
-		// Check whether the game has ended in a draw. 
+	// Check whether the game has ended in a draw. 
 		for (int row = 0; row < GameMain.ROWS; ++row) {
 			for (int col = 0; col < GameMain.COLS; ++col) {
-			if(cells[row][col].content == Player.Empty) {
-				return false;
+				if(cells[row][col].content == Player.Empty) {
+					return false;
+				}
 			}
-		}
 		}
 		return true;
 		
@@ -42,23 +42,23 @@ public class Board {
 	/** Return true if the current player "thePlayer" has won after making their move  */
 	public boolean hasWon(Player thePlayer, int playerRow, int playerCol) {
 		
-		 // check if player has 3-in-that-row
+	// check if player has 3-in-that-row
 		if(cells[playerRow][0].content == thePlayer && cells[playerRow][1].content == thePlayer && cells[playerRow][2].content == thePlayer )
 			return true; 
 		
-		 // Check if the player has 3 in the playerCol.
+	// Check if the player has 3 in the playerCol.
 		if(cells[0][playerCol].content == thePlayer && cells[1][playerCol].content == thePlayer && cells[2][playerCol].content == thePlayer )
 			return true; 
 		
-		 // 3-in-the-diagonal
+	// 3-in-the-diagonal
 		if( cells[0][0].content == thePlayer && cells[1][1].content == thePlayer && cells[2][2].content == thePlayer)
 			return true;
 		
-		// Check the diagonal in the other direction
+	// Check the diagonal in the other direction
 		if( cells[0][2].content == thePlayer && cells[1][1].content == thePlayer && cells[2][0].content == thePlayer)
 			return true;
 		
-		//no winner, keep playing
+	//no winner, keep playing
 		return false;
 	}
 	
@@ -68,7 +68,7 @@ public class Board {
 	 */
 	public void paint(Graphics g) {
 		
-		//draw the grid
+	//draw the grid
 		g.setColor(Color.gray);
 		for (int row = 1; row < GameMain.ROWS; ++row) {          
 			g.fillRoundRect(0, GameMain.CELL_SIZE * row - GRID_WIDHT_HALF,                
@@ -81,7 +81,7 @@ public class Board {
 					GRID_WIDTH, GRID_WIDTH);
 		}
 		
-		//Draw the cells
+	//Draw the cells
 		for (int row = 0; row < GameMain.ROWS; ++row) {          
 			for (int col = 0; col < GameMain.COLS; ++col) {  
 				cells[row][col].paint(g);
