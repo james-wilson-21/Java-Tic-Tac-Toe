@@ -1,0 +1,7 @@
+/**
+ * Enumeration for the GameState
+ */
+
+public enum GameState {
+	Draw, Cross_won, Nought_won, Playing
+}
